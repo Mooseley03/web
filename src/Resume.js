@@ -111,3 +111,4 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
             <Footer />
         </div>
     );
+}
