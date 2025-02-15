@@ -89,7 +89,7 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
                     {/* Embed the PDF using iframe */}
                     <div style={iframeContainerStyles}>
                         <iframe
-                            src="https://github.com/Mooseley03/web/blob/ff31cce221b3357af2f1ec242699cb9e39eb91fe/public/ChrisMoseleyFall2024Resume.pdf"  // Update this with the actual path to your PDF
+                            src="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf"// Update this with the actual path to your PDF
                             width="100%"
                             height="800px"
                             style={{ border: "none" }}
@@ -100,7 +100,7 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
                 {/* Download Button */}
                 <div style={sectionStyles}>
                     {/*<h2 style={sectionTitleStyles}>Download My Resume</h2>*/}
-                    <a href="https://github.com/Mooseley03/web/blob/ff31cce221b3357af2f1ec242699cb9e39eb91fe/public/ChrisMoseleyFall2024Resume.pdf" download>
+                    <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
                         <button style={buttonStyles}>Download Resume</button>
                     </a>
                 </div>
