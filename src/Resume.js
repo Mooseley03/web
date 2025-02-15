@@ -1,11 +1,9 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import React, { useState } from "react";
-// Import react-pdf library
-import { Document, Page } from 'react-pdf';
 
 export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded }) {
-    
+
     // Styling
     const containerStyles = {
         fontFamily: "Arial, sans-serif",
@@ -56,69 +54,57 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
     };
 
     const buttonStyles = {
-        padding: "10px 20px",
-        backgroundColor: "#3498DB", // Accent color (Sky Blue)
-        color: "#fff",
-        border: "none",
-        borderRadius: "4px",
-        cursor: "pointer",
-        transition: "background-color 0.3s", // Adding smooth transition for hover effect
-        textDecoration: "none",
-        position: "absolute",
-        top: "50%", 
-        left: "50%",
-        transform: "translate(-50%, -50%)"  // This centers the button
+    padding: "10px 20px",
+    backgroundColor: "#3498DB", // Accent color (Sky Blue)
+    color: "#fff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    transition: "background-color 0.3s", // Adding smooth transition for hover effect
+    textDecoration: "none",
+    position: "absolute",
+    top: "50%", 
+    left: "50%",
+    transform: "translate(-50%, -50%)"  // This centers the button
+};
+
+    // Adding hover effect for the button
+    const buttonHoverStyles = {
+        backgroundColor: "#A2C7E1", // Light Blue for hover state
     };
-
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-
-    // Function to set number of pages
-    const onLoadSuccess = ({ numPages }) => setNumPages(numPages);
 
     return (
         <div style={containerStyles}>
-            {/* Navbar (Header) */}
-            <Navbar viewer={viewer} setViewer={setViewer} />
+        {/* Navbar (Header) */}
+        <Navbar viewer={viewer} setViewer={setViewer} />
 
-            {/* Content Area */}
-            <div style={contentContainerStyles}>
-                <div style={sectionStyles}>
-                    <h2 style={sectionTitleStyles}>Download and View My Resume</h2>
-                    <p style={sectionTextStyles}>Below is my resume. You can view it directly here, or download it if needed.</p>
+        {/* Content Area */}
+        <div style={contentContainerStyles}>
+            <div style={sectionStyles}>
+                <h2 style={sectionTitleStyles}>Download and View My Resume</h2>
+                <p style={sectionTextStyles}>Below is my resume. You can view it directly here, or download it if needed.</p>
 
-                    {/* Embed the PDF using react-pdf */}
-                    <div style={iframeContainerStyles}>
-                        <Document
-                            file="/ChrisMoseleyFall2024Resume.pdf" // Relative path to the PDF file
-                            onLoadSuccess={onLoadSuccess}
-                        >
-                            <Page pageNumber={pageNumber} width={600} />
-                        </Document>
-                    </div>
-                </div>
-
-                {/* Pagination */}
-                <div style={{ textAlign: "center" }}>
-                    <button onClick={() => setPageNumber(pageNumber - 1)} disabled={pageNumber <= 1}>
-                        Previous Page
-                    </button>
-                    <span>Page {pageNumber} of {numPages}</span>
-                    <button onClick={() => setPageNumber(pageNumber + 1)} disabled={pageNumber >= numPages}>
-                        Next Page
-                    </button>
-                </div>
-
-                {/* Download Button */}
-                <div style={sectionStyles}>
-                    <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
-                        <button style={buttonStyles}>Download Resume</button>
-                    </a>
+                {/* Embed the PDF using iframe (using relative path for deployment) */}
+                <div style={iframeContainerStyles}>
+                    <iframe
+                        src="/public/ChrisMoseleyFall2024Resume.pdf" // Use the relative URL to the public folder
+                        width="100%"
+                        height="800px"
+                        style={{ border: "none" }}
+                    ></iframe>
                 </div>
             </div>
 
-            {/* Footer */}
-            <Footer />
+            {/* Download Button */}
+            <div style={sectionStyles}>
+                <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
+                    <button style={buttonStyles}>Download Resume</button>
+                </a>
+            </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
+    </div>
     );
 }
