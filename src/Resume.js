@@ -75,36 +75,39 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
 
     return (
         <div style={containerStyles}>
-        {/* Navbar (Header) */}
-        <Navbar viewer={viewer} setViewer={setViewer} />
+            {/* Navbar (Header) */}
+            <Navbar viewer={viewer} setViewer={setViewer} />
 
-        {/* Content Area */}
-        <div style={contentContainerStyles}>
-            <div style={sectionStyles}>
-                <h2 style={sectionTitleStyles}>Download and View My Resume</h2>
-                <p style={sectionTextStyles}>Below is my resume. You can view it directly here, or download it if needed.</p>
+            {/* Content Area */}
+            <div style={contentContainerStyles}>
+                {/* <h1 style={titleStyles}>My Resume</h1> */}
 
-                {/* Embed the PDF using iframe (using relative path for deployment) */}
-                <div style={iframeContainerStyles}>
-                    <iframe
-                        src="/public/ChrisMoseleyFall2024Resume.pdf" // Use the relative URL to the public folder
-                        width="100%"
-                        height="800px"
-                        style={{ border: "none" }}
-                    ></iframe>
+                <div style={sectionStyles}>
+                    <h2 style={sectionTitleStyles}>Download and View My Resume</h2>
+                    <p style={sectionTextStyles}>Below is my resume. You can view it directly here, or download it if needed.</p>
+
+                    {/* Embed the PDF using iframe */}
+                    <div style={iframeContainerStyles}>
+                        <iframe
+                            src="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf"// Update this with the actual path to your PDF
+                            width="100%"
+                            height="800px"
+                            style={{ border: "none" }}
+                        ></iframe>
+                    </div>
+                </div>
+
+                {/* Download Button */}
+                <div style={sectionStyles}>
+                    {/*<h2 style={sectionTitleStyles}>Download My Resume</h2>*/}
+                    <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
+                        <button style={buttonStyles}>Download Resume</button>
+                    </a>
                 </div>
             </div>
 
-            {/* Download Button */}
-            <div style={sectionStyles}>
-                <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
-                    <button style={buttonStyles}>Download Resume</button>
-                </a>
-            </div>
+            {/* Footer */}
+            <Footer />
         </div>
-
-        {/* Footer */}
-        <Footer />
-    </div>
     );
 }
