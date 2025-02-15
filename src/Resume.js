@@ -89,7 +89,7 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
                     {/* Embed the PDF using iframe */}
                     <div style={iframeContainerStyles}>
                         <iframe
-                            src="/ChrisMoseleyFall2024Resume.pdf"  // Update this with the actual path to your PDF
+                            src="https://mooseley03.github.io/portfolio/ChrisMoseleyFall2024Resume.pdf"  // Update this with the actual path to your PDF
                             width="100%"
                             height="800px"
                             style={{ border: "none" }}
