@@ -69,7 +69,7 @@ export default function Homepage({ viewer, setViewer, isExpanded, setIsExpanded 
 
                     {/* Circular Image */}
                     <img 
-                        src="https://raw.githubusercontent.com/Mooseley03/web/main/public/ProfilePic.jpg" 
+                        src="https://raw.githubusercontent.com/Mooseley03/web/main/public/ProfilePic.jpg"
                         alt="Chris Moseley" 
                         style={styles.circularImage} 
                     />

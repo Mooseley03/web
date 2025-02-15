@@ -101,7 +101,7 @@ export default function Resume({ viewer, setViewer, isExpanded, setIsExpanded })
                 {/* Download Button */}
                 <div style={sectionStyles}>
                     {/*<h2 style={sectionTitleStyles}>Download My Resume</h2>*/}
-                    <a href="/ChrisMoseleyFall2024Resume.pdf" download>
+                    <a href="https://raw.githubusercontent.com/Mooseley03/web/main/public/ChrisMoseleyFall2024Resume.pdf" download>
                         <button style={buttonStyles}>Download Resume</button>
                     </a>
                 </div>
